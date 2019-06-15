@@ -37,7 +37,7 @@ var e = document.getElementById("formchoice");
 
 //Get the selected value of the select list
 var formaction = e.options[e.selectedIndex].value;
-	var firebaseRef = firebase.database().ref("lessons").child(formaction);
+	var firebaseRef = firebase.database().ref('lessons/tabs').child(formaction);
 	firebaseRef.child("title").set(title);
 	firebaseRef.child("desc").set(desc);
 	firebaseRef.child("picture").set(picture);
