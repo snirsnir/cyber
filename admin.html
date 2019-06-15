@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>admin</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1 id="adminheader">אזור מנהל</h1>
+<h2 id="adminheader2" > :בחר שיעור שברצונך לערוך</h2>
+	<div dir="rtl">
+	<div id="mainselection">
+<form name ="form1" onSubmit="actionOnSubmit()" action="ok.php" method ="post" target="_blank">
+<select id="formchoice" name="formchoice">
+
+  <option value="les1">שיעור 1</option>
+  <option value="les2">שיעור 2</option>
+  <option value="les3">שיעור 3</option>
+  <option value="les4">שיעור 4</option>
+  <option value="les5">שיעור 5</option>
+  <option value="les6">שיעור 6</option>
+  <option value="les7">שיעור 7</option>
+  <option value="les8">שיעור 8</option>
+  <option value="les9">שיעור 9</option>
+  <option value="les10">שיעור 10</option>
+  <option value="les11">שיעור 11</option>
+  <option value="les12">שיעור 12</option>
+  <option value="les13">שיעור 13</option>
+  <option value="les14">שיעור 14</option>
+  <option value="les15">שיעור 15</option>
+  <option value="les16">שיעור 16</option>
+  <option value="les17">שיעור 17</option>
+  <option value="les18">שיעור 18</option>
+  <option value="les19">שיעור 19</option>
+  <option value="les20">שיעור 20</option>
+  <option value="les21">שיעור 21</option>
+  <option value="les22">שיעור 22</option>
+  <option value="les23">שיעור 23</option>
+  <option value="les24">שיעור 24</option>
+  <option value="les25">שיעור 25</option>
+  <option value="les26">שיעור 26</option>
+</select>
+	</div>
+		
+	<br>
+	<h2 id="adminheader2" > כתוב כותרת לשיעור:</h2>
+		<input type="text" id="mytitle" name="title" ><br>
+		<br>
+		<h2 id="adminheader2" > כתוב את תוכן השיעור:</h2>
+	<textarea id="writequest" rows="10" cols="40">
+</textarea>
+		<br>
+		<h2 id="adminheader2" > העלה תמונת שיעור:</h2>
+		<progress value="0" max="100" id="uploader">0%</progress>
+		<input type="file" value="upload" id="fileButton"/>
+		<br>
+		<div dir="rtl">
+		<input type="submit" value="שלח" class="button2">
+		</div>
+		</div>
+</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAqXiyzo7VujlIMsrKTadJA8HNbBXoIb6o",
+    authDomain: "cyberspace-8dfc9.firebaseapp.com",
+    databaseURL: "https://cyberspace-8dfc9.firebaseio.com",
+    projectId: "cyberspace-8dfc9",
+    storageBucket: "cyberspace-8dfc9.appspot.com",
+    messagingSenderId: "996627579496",
+    appId: "1:996627579496:web:9ad511a1518c575c"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+	<script src="indexa.js"></script>
+
+</body>
+	
+</html>
+

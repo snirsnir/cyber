@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cyberspace</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<header><h1 href="index.html"><a href="index.html"><img src="images/logo.png" width="240" height="120" alt="cyberSpace logo"></a></h1>
+	<h2 href="index.html"><img src="images/berlin.png" width="120" height="130" alt="guestname"></h2>
+	<h3 href="index.html"><img src="images/chatb.png" width="80" height="50" alt="chat"></h3>
+	<h4 href="index.html"><img src="images/closet.png" width="180" height="150" alt="chat"></h4>
+	<h5 href="index.html"><img src="images/trophy.png" width="50" height="40" alt="chat"></h5>
+	
+	</header>
+	
+  <button class="button" id="safe">כספת אישית</button>
+  <button class="button" id="playground">מגרש משחקים</button>
+  <button class="button" id="lessons">שיעורים</button>
+  <button class="button" id="store">חנות</button>
+  <button class="button" id="crypt">קריפטוגרף</button>
+	<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <button class="button" id="les1">שיעור 1</button>
+	  <button class="button" id="les2">שיעור 2</button>
+	  <div id="img-holder">
+    <img src="images/locker.png" alt="locker"/>
+		  <a class="link" href=""></a>
+</div>
+  </div>
+
+</div>
+	<div id="myModal2" class="modal2">
+
+  <!-- Modal2 content -->
+  <div class="modal-content2">
+    <span class="close2">&times;</span>
+	 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeBcMz3CPglW9AP0JxB3bdty1js_FVi9WBywO4pDU0lOYuLhg/viewform?vc=0&c=0&w=1" height="1000" width="1500"></iframe>
+  </div>
+
+</div>
+		<div id="myModal3" class="modal3">
+
+  <!-- Modal3 content -->
+  <div class="modal-content3">
+    <span class="close3">&times;</span>
+	 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeBcMz3CPglW9AP0JxB3bdty1js_FVi9WBywO4pDU0lOYuLhg/viewform?vc=0&c=0&w=1" height="1000" width="1500"></iframe>
+  </div>
+
+</div>
+	
+	<script type="text/javascript">
+		var modal = document.getElementById('myModal');
+		var moda3 = document.getElementById('myModal3');
+	    var btn = document.getElementById("lessons");
+		var span = document.getElementsByClassName("close")[0];
+		var span2 = document.getElementsByClassName("close2")[0];
+		var span3 = document.getElementsByClassName("close3")[0];
+		var les1 = document.getElementById("les1");
+		var start1 = document.getElementById("strat1");
+		var modal2 = document.getElementById('myModal2');
+		btn.onclick = function() {
+  		modal.style.display = "block";
+}
+		span.onclick = function() {
+  modal.style.display = "none";
+}
+		window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+			 if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+					 if (event.target == modal3) {
+    modal3.style.display = "none";
+  }
+}
+		les1.onclick = function() {
+  		modal3.style.display = "block";
+}
+		start1.onclick = function() {
+  		modal2.style.display = "block";
+}
+  span2.onclick = function() {
+  modal2.style.display = "none";
+}
+    span3.onclick = function() {
+  modal3.style.display = "none";
+}
+
+
+		
+		
+	</script>
+
+</body>
+	
+</html>
+
