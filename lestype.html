@@ -15,7 +15,7 @@
 	
 	<div id="mainselection">
 <form name ="form1" onSubmit="actionOnSubmit()" action="ok.php" method ="post" target="_blank">
-<select id="formchoice" name="formchoice">
+<select id="formchoice" onchange="changedSelected()" name="formchoice">
 
   <option value="les1">שיעור 1</option>
   <option value="les2">שיעור 2</option>
@@ -53,10 +53,20 @@
 	<h2 id="adminheader2" > יש לבחור בין מסך שאלון לבין מסך הסבר</h2>
 		  <button class="button" id="shelon" >שאלון</button>
   <button class="button" id="hesber" >הסבר</button>
+	<br><br><br>	<hr align="right" width="50%" color="red" size="10">
 	<div id="shelonD" style="display: none">
-		<br> <br>
-    I am sheelon
-</div>
+			<h2 id="adminheader2" > כתוב כותרת לשאלון:</h2>
+		<input type="text" id="mysquest" name="titleq" ><br>
+		<br> 
+		<h2 id="adminheader2" > הוסף תשובות:</h2>
+<form id="approve">
+    <input name="addradio" id="addingradio" />
+    <button class="button" type="button"onclick="addingRadio()">הוסף עוד תשובה</button>
+	<br>
+</form>
+			<h2 id="adminheader2" > בחר מי התשובה הנכונה:</h2>
+	<input type="text" id="correct" name="correcta" ><br>
+			</div>
 			<div id="hesberD" style="display: none">
 				<h2 id="adminheader2" > כתוב כותרת להסבר:</h2>
 		<input type="text" id="mytitle" name="title" ><br>
@@ -70,24 +80,7 @@
 		<br><br><br><br>
 	<button class="button" onclick="nextScreen()">למסך הבא</button>
 	<button id="backb" class="button" style="display: none" onclick="backScreen()">חזרה למסך הקודם</button>
-	<script> 
-	     var clicks = 1;
-		document.getElementById("counter").innerHTML = clicks;
-    function nextScreen() { // retrive counter of screen
-		if (clicks == 1){
-			$('#backb').show();
-		}
-        clicks += 1;
-        document.getElementById("counter").innerHTML = clicks;
-    }
-		function backScreen() { // retrive counter of screen
-		if (clicks == 2){ //2 BECAUSE VAR STARTS WITH 1
-			$('#backb').hide();
-		}
-        clicks -= 1;
-        document.getElementById("counter").innerHTML = clicks;
-    }
-	</script>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
@@ -106,20 +99,8 @@
 </script>
 	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-<script>//HIDE AND SHOW
-		$(function(){
-    $('#hesber').on('click',function(){
-      $('#hesberD').show();
-		$('#shelonD').hide();
-    });
-    $('#shelon').on('click',function(){
-      $('#shelonD').show();
-		$('#hesberD').hide();
-    });
 
-});
-		</script>
-
+<script src="indexb.js"></script>
 </body>
 	
 </html>

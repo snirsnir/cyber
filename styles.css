@@ -40,7 +40,7 @@ body header h5 {
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
-	margin-top: 10%;
+	margin-top: 2%;
 	margin-right: 2%;
 	width: 17.7%;
 
@@ -245,6 +245,7 @@ top: 29.5%;
 	
 	
 }
+
 #mainselection select {
    border: 0;
    color: darkgrey;
@@ -285,6 +286,28 @@ top: 29.5%;
 	font-size: 25px;
 	background-color: #f8f8f8;
 }
+#mysquest {
+	 border: 10px solid darkgrey;
+  border-radius: 4px;
+	text-align: right;
+	font-size: 25px;
+	background-color: #f8f8f8;
+	
+}
+#correct {
+	 border: 10px solid darkgrey;
+  border-radius: 4px;
+	text-align: right;
+	font-size: 25px;
+	background-color: #f8f8f8;
+}
+#addingradio {
+	 border: 10px solid darkgrey;
+  border-radius: 4px;
+	text-align: right;
+	font-size: 25px;
+	background-color: #f8f8f8;
+}
 
 #shelon {
 	margin-top: 3%;
@@ -292,4 +315,26 @@ top: 29.5%;
 }
 #hesber {
 	margin-top: 3%;
+}
+
+#approve{
+font-size: 60px;
+	color: darkred;
+}
+
+input[type="radio"] + name {
+  border: 5px solid lightblue;
+  background-color: lightblue;
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  width: 200px;
+  text-align: center;
+  line-height: 40px;
+	font-size: 100px;
+}
+input[type="radio"]:checked + name {
+  border: 5px solid blue;
+  background-color: dodgerblue;
+	font-size: 100px;
 }
