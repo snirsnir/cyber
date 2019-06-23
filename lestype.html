@@ -46,7 +46,7 @@
 </select>
 	</div>
 		<br><br>
-		<h2 id="adminheader2" > :אתה כרגע במסך מספר </h2>
+		<h2 id="adminheader2" > אתה כרגע במסך מספר: </h2>
 		<p style="color:white;font-size:50px;margin-right:150px;"id="counter"></p>
 	<br>
 		</form>
@@ -59,11 +59,14 @@
 		<input type="text" id="mysquest" name="titleq" ><br>
 		<br> 
 		<h2 id="adminheader2" > הוסף תשובות:</h2>
+				    <button class="button" type="button"onclick="addingRadio()">הוסף עוד תשובה</button>
 <form id="approve">
     <input name="addradio" id="addingradio" />
-    <button class="button" type="button"onclick="addingRadio()">הוסף עוד תשובה</button>
 	<br>
 </form>
+		<br>
+		<input type="text" id="input" /> 
+
 			<h2 id="adminheader2" > בחר מי התשובה הנכונה:</h2>
 	<input type="text" id="correct" name="correcta" ><br>
 			</div>
@@ -80,6 +83,9 @@
 		<br><br><br><br>
 	<button class="button" onclick="nextScreen()">למסך הבא</button>
 	<button id="backb" class="button" style="display: none" onclick="backScreen()">חזרה למסך הקודם</button>
+		<h2 id="adminheader2" > אם ברצונך לדלג למסך מסוים בחר אותו כאן:</h2>
+		<input type="text" id="screen" name="screen" >
+		<button class="button" onclick="chooseScreen()">בחר מסך</button>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
