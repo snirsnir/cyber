@@ -6,57 +6,30 @@
 </head>
 
 <body>
-<form name ="form1" onSubmit="actionOnSubmit()" method ="post" target="_blank">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="custom.js"></script>
 
-<select id="formchoice" name="formchoice">
+<h1>Add your Hobbies</h1>
+<form method="post" action="save.php" enctype="multipart/form-data">
+  <div id="container">
+    <p id="add_field"><a href="#"><span>Add Field</span></a></p>
+  </div>
 
-  <option value="les1">שיעור 1</option>
-  <option value="les2">שיעור 2</option>
-  <option value="les3">שיעור 3</option>
-  <option value="les4">שיעור 4</option>
-  <option value="les5">שיעור 5</option>
-  <option value="les6">שיעור 6</option>
-  <option value="les7">שיעור 7</option>
-  <option value="les8">שיעור 8</option>
-  <option value="les9">שיעור 9</option>
-  <option value="les10">שיעור 10</option>
-  <option value="les11">שיעור 11</option>
-  <option value="les12">שיעור 12</option>
-  <option value="les13">שיעור 13</option>
-  <option value="les14">שיעור 14</option>
-  <option value="les15">שיעור 15</option>
-  <option value="les16">שיעור 16</option>
-  <option value="les17">שיעור 17</option>
-  <option value="les18">שיעור 18</option>
-  <option value="les19">שיעור 19</option>
-  <option value="les20">שיעור 20</option>
-  <option value="les21">שיעור 21</option>
-  <option value="les22">שיעור 22</option>
-  <option value="les23">שיעור 23</option>
-  <option value="les24">שיעור 24</option>
-  <option value="les25">שיעור 25</option>
-  <option value="les26">שיעור 26</option>
-
-</select>
-<input type="submit" value="Go" class="button">
+  <input type="submit" name="submit_val" value="Submit" />
 </form>
-
-<script>
-
-function actionOnSubmit()
-{
-
-//Get the select select list and store in a variable
-var e = document.getElementById("formchoice");
-
-//Get the selected value of the select list
-var formaction = e.options[e.selectedIndex].value;
-	window.alert("sometext");
-
-//Update the form action
-document.form1.action = formaction;
-
-}
-</script>
+	<script>
+		var answers = [];
+	var counter = 0;
+$(function(){
+  $('p#add_field').click(function(){
+	  for (var i = 0 ; i<5 ; i++){
+    counter += 1;
+    $('#container').append(
+     '<input id="counter" name="radioanswers" type="radio" value="male"/>Male' 
+    );
+  }
+  });
+});
+	</script>
 </body>
 </html>
