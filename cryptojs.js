@@ -1,10 +1,9 @@
-<!-- saved from url=(0022)http://internet.e-mail -->
-<html>
-<head>
-<title>Hex/Ascii Converter</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-
-<script>
+var flagb = 0; //flag of buttons
+var tempbutton;
+var hexab = document.getElementById("hexab");
+var gematriab = document.getElementById("gematriab")
+var abcb = document.getElementById("abcb");
+var binaryb = document.getElementById("binaryb");
 
 var symbols = " !\"#$%&'()*+,-./0123456789:;<=>?@";
 var loAZ = "abcdefghijklmnopqrstuvwxyz";
@@ -67,37 +66,26 @@ function toHex()
 	document.form1.hex.value = text;
 	return false;
 }
+function pressed(element){
+	if (flagb == 1){
+		document.getElementById(tempbutton).style.transform = "translateY(-4px)";
+	document.getElementById(tempbutton).style.backgroundColor = "#1084bd";
+	flagb--;	
+	}
+    document.getElementById(element.id).style.transform = "translateY(4px)";
+	document.getElementById(element.id).style.backgroundColor = "#044463";
+	flagb++;
+	tempbutton = element.id
+}
+function whatToDo(element){
+	if (tempbutton == "hexab" && element.id == "crypt"  )//crypt hexa
+		{
+			toHex();
+		}
+	if (tempbutton == "hexab" && element.id == "decrypt"  )//decrypt hexa
+		{
+			toAscii();
+		}
+	
+}
 
-
-</script>
-
-
-</head>
-
-<body>
-
-
-
-<p><font face="Geneva, Arial, Helvetica, sans-serif"><strong>Hex To ASCII Converter</strong></font></p>
-<form name="form1" method="post" action="">
-  <table width="78%" border="0" cellpadding="5" cellspacing="5">
-    <tr>
-      <td width="13%"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Hex:
-        </font></td>
-      <td width="76%"><textarea name="hex" cols="80" rows="3" id="hex">41:6e:74:6f:6e:20:69:73:20:67:72:65:61:74:20:3a:29</textarea></td>
-    </tr>
-    <tr>
-      <td><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Ascii:</font></td>
-      <td><textarea name="ascii" cols="80" rows="3" id="ascii"></textarea></td>
-    </tr>
-  </table>
-  <p>
-    <input name="b1" type="submit" id="b13" value="Hex To ASCII" onClick="return toAscii();">
-    <input name="b2" type="submit" id="b14" value="ASCII To Hex" onClick="return toHex();">
-  </p>
-  <p>&nbsp;</p>
-</form>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-</body>
-</html>

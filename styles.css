@@ -417,3 +417,42 @@ text-align: center;
 #guess{
 	background-color: red;
 }
+#cryptotxt{
+background-color: white;
+  width: 80%;
+  border: 14px inset #7765AD;
+  border-radius: 40px;
+  padding-bottom: 0%;
+  margin: auto;
+
+}
+#cryptotxt2 {
+font-family: Georgia, serif;
+font-size: 40px;
+letter-spacing: -2.6px;
+word-spacing: 2.2px;
+color: #FF0000;
+font-weight: 400;
+text-decoration: underline solid rgb(68, 68, 68);
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+#crypto {
+  border: 5px solid red;
+  border-radius: 12px;
+}
+/*scroll css*/
+.parent{
+    position:relative;
+    overflow:hidden;
+    width:230px;
+	float:left;
+}
+
+
+/*menu*/
+#leftSideMenu { width:850px; height:300px; }
+#leftSideMenu ul { list-style:none; padding:0; margin:0; }
+#leftSideMenu ul li {  }
+#leftSideMenu ul li a { display:block;  font-size:24px;}

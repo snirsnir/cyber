@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>קריפטוגרף</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<h1 id="adminheader">קריפטוגרף</h1>
+	
+	<div class="parent">
+ 
+<div id="leftSideMenu">
+<ul>
+<li><a class ="button" id="hexab" onClick="pressed(this)">Hexa</a></li>
+<li><a class ="button" id="gematriab" onClick="pressed(this)">Gematria</a></li>
+<li><a class ="button" id="abcb" onClick="pressed(this)">ABC</a></li>
+<li><a class ="button" id="binaryb" onClick="pressed(this)">Binary</a></li>
+</ul>
+</div>
+</div>
+
+<center>
+<p><font size=20 face="Geneva, Arial, Helvetica, sans-serif"><strong>הצפנה ופיענוח</strong></font></p>
+<form name="form1" method="post" action="">
+  <table width="-20%" border="0" cellpadding="5" cellspacing="5">
+    <tr>
+      
+      <td ><textarea dir="rtl" name="hex" cols="80" rows="3" id="hex">74:65:73:74</textarea></td>
+		<td ><font size="20" face="Geneva, Arial, Helvetica, sans-serif" dir="rtl">תוכן מוצפן:
+        </font></td>
+    </tr>
+    <tr>
+	  <td><textarea dir="rtl" name="ascii" cols="80" rows="3" id="ascii">test</textarea></td>
+      <td><font size="20" face="Geneva, Arial, Helvetica, sans-serif" dir="rtl">תוכן מפוענח:</font></td>
+      
+    </tr>
+  </table>
+  <p>
+    <input class="button" name="b1"  id="decrypt" value="פענח" onClick="return whatToDo(this);">
+    <input class="button" name="b2"  id="crypt" value="הצפן" onClick="return whatToDo(this);">
+  </p>
+  <p>&nbsp;</p>
+</form>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+	</center>
+	<script src="cryptojs.js"></script>
+</body>
+
+	
+</html>
+
