@@ -5,14 +5,14 @@ var gematriab = document.getElementById("gematriab")
 var abcb = document.getElementById("abcb");
 var binaryb = document.getElementById("binaryb");
 var VALUES = {};
-var arrchar = ["א","ב","ג","ד","ה","ו","ז","ח","ט","י","כ","ך","ל","מ","ם","נ","ן","ס","ע","פ","ף","צ","ץ","ק","ר","ש","ת"]
-var misparim = ["1","2","3","4","5","6","7","8","9","10","20","20","30","40","40","50","50","60","70","80","80","90","90","100","200","300","400"]
+var arrchar = ["א","ב","ג","ד","ה","ו","ז","ח","ט","י","כ","ך","ל","מ","ם","נ","ן","ס","ע","פ","ף","צ","ץ","ק","ר","ש","ת","?",' ']
+var misparim = ["1","2","3","4","5","6","7","8","9","10","20","20","30","40","40","50","50","60","70","80","80","90","90","100","200","300","400","?",' ']
 
 function toGematriaCrypt()
 {
 	var i;
 	var j;
-	valueStr = document.form1.decryptt.value.replace(/\s/g, '');
+	valueStr = document.form1.decryptt.value;
 	var newword = "";
 	var flagdot = 0;
 	var splited = [];
@@ -37,6 +37,7 @@ function toGematriaCrypt()
 	else{
 		alert("רק עברית בבקשה!");
 	}
+	alert(newword);
 	splited = newword.split(":")
 	var reversed = splited.reverse(); 
 	var joined = reversed.join(":");
