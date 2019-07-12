@@ -4,19 +4,52 @@ var hexab = document.getElementById("hexab");
 var gematriab = document.getElementById("gematriab")
 var abcb = document.getElementById("abcb");
 var binaryb = document.getElementById("binaryb");
-var upperTxt = document.getElementById('hex');
-var downTxt = document.getElementById('ascii');
+var VALUES = {};
+var arrchar = ["א","ב","ג","ד","ה","ו","ז","ח","ט","י","כ","ך","ל","מ","ם","נ","ן","ס","ע","פ","ף","צ","ץ","ק","ר","ש","ת"]
+var misparim = ["1","2","3","4","5","6","7","8","9","10","20","20","30","40","40","50","50","60","70","80","80","90","90","100","200","300","400"]
 
-var symbols = " !\"#$%&'()*+,-./0123456789:;<=>?@";
-var loAZ = "abcdefghijklmnopqrstuvwxyz";
-symbols+= loAZ.toUpperCase();
-symbols+= "[\\]^_`";
-symbols+= loAZ;
-symbols+= "{|}~";
-
+function toGematriaCrypt()
+{
+	var i;
+	var j;
+	valueStr = document.form1.decryptt.value.replace(/\s/g, '');
+	var newword = "";
+	var flagdot = 0;
+	var splited = [];
+	var position = valueStr.search(/[\u0590-\u05FF]/);
+	if(position >= 0){
+ 
+	for (i = 0;i<valueStr.length ; i++){
+		for (j = 0 ; arrchar.length ;j++){
+	if (valueStr[i] == arrchar[j]){
+		if (flagdot == 1){
+			newword += ":" + misparim[j];
+			break;
+		}
+    else {newword += misparim[j];
+		  flagdot++;
+		break;
+		 }
+	}
+		}
+	}
+	}
+	else{
+		alert("רק עברית בבקשה!");
+	}
+	splited = newword.split(":")
+	var reversed = splited.reverse(); 
+	var joined = reversed.join(":");
+	document.form1.cryptt.value = joined;
+}
+function toGematriaDecrypt()
+{
+	valueStr = document.form1.cryptt.value;
+	
+}
 function toAscii()
 {
-	valueStr = document.form1.hex.value;
+	valueStr = document.form1.cryptt.value;
 	valueStr = valueStr.toLowerCase();
     var hex = "0123456789abcdef";
 	var text = "";
@@ -34,13 +67,13 @@ function toAscii()
 	for(var j = 0;j<readyascii.length;j++){
 		 laststring += String.fromCharCode(readyascii[j]);
 	}
-	document.form1.ascii.value = laststring;
+	document.form1.decryptt.value = laststring;
 	return false;
 }
 
 function toHex()
 {
-	valueStr = document.form1.ascii.value;
+	valueStr = document.form1.decryptt.value;
 	var flagdot = 0;
 	var result = "";
     for(var i = 0; i < valueStr.length; i++){
@@ -53,14 +86,14 @@ function toHex()
 			flagdot++;
 		}
     }
-    document.form1.hex.value = result;
+    document.form1.cryptt.value = result;
 }
 function pressed(element){
 	if (flagb == 1){
 		document.getElementById(tempbutton).style.transform = "translateY(-4px)";
 	document.getElementById(tempbutton).style.backgroundColor = "#1084bd";
-		$('#hex').val('');//empty the textareas
-		$('#ascii').val('');
+		$('#cryptt').val('');//empty the textareas
+		$('#decryptt').val('');
 	flagb--;	
 	}
 	showTest(element);//func that will show TEST in textarea
@@ -77,17 +110,28 @@ function whatToDo(element){//decrypt and crypt what
 		{
 			toHex();
 		}
-	if (tempbutton == "hexab" && element.id == "decrypt"  )//decrypt hexa
+	else if (tempbutton == "hexab" && element.id == "decrypt"  )//decrypt hexa
 		{
 			toAscii();
+		}
+	else if (tempbutton == "gematriab" && element.id == "crypt")//decrypt hexa
+		{
+			toGematriaCrypt();
+		}
+	else if (tempbutton == "gematriab" && element.id == "decrypt")//decrypt hexa
+		{
+			toGematriaDecrypt();
 		}
 	
 }
 function showTest(element){//this func will show a tester of crypt AT THIS TIME ONLY HEXA
 	if (element.id == "hexab"){
-		$('#hex').val('74:65:73:74');
-		$('#ascii').val('test');
+		$('#cryptt').val('74:65:73:74');
+		$('#decryptt').val('test');
 	}
-	
+	else if (element.id == "gematriab"){
+		$('#cryptt').val('5:100:10:4:2');
+		$('#decryptt').val('בדיקה');
+	}
 }
 
