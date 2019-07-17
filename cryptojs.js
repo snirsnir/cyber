@@ -12,7 +12,7 @@ function toGematriaCrypt()
 {
 	var i;
 	var j;
-	valueStr = document.form1.decryptt.value;
+	var valueStr = document.form1.decryptt.value;
 	var newword = "";
 	var flagdot = 0;
 	var splited = [];
@@ -37,7 +37,6 @@ function toGematriaCrypt()
 	else{
 		alert("רק עברית בבקשה!");
 	}
-	alert(newword);
 	splited = newword.split(":")
 	var reversed = splited.reverse(); 
 	var joined = reversed.join(":");
@@ -45,8 +44,28 @@ function toGematriaCrypt()
 }
 function toGematriaDecrypt()
 {
+	var newword2 = "";
 	valueStr = document.form1.cryptt.value;
-	
+	var toArr = valueStr.split(":");
+	var op = toArr.every(element => misparim.indexOf(element) > -1);
+	if(op){
+	for (var i =0;i<toArr.length; i++){
+		for (var j = 0 ; misparim.length ;j++){
+		if(toArr[i] == misparim[j]){
+			newword2 += arrchar[j];
+			break;
+		}
+			else if (toArr[i] == " "){
+				newword2 += " ";
+				break;
+			}
+		}
+	}
+	document.form1.decryptt.value = newword2;
+	}
+	else {alert("רק מספרים בגימטריה!");
+		 }
+
 }
 function toAscii()
 {
