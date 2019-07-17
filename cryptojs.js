@@ -148,10 +148,12 @@ function showTest(element){//this func will show a tester of crypt AT THIS TIME 
 	if (element.id == "hexab"){
 		$('#cryptt').val('74:65:73:74');
 		$('#decryptt').val('test');
+		document.form1.cryptt.setAttribute('dir', 'ltr')
 	}
 	else if (element.id == "gematriab"){
 		$('#cryptt').val('5:100:10:4:2');
 		$('#decryptt').val('בדיקה');
+		document.form1.cryptt.setAttribute('dir', 'ltr')
 	}
 }
 
