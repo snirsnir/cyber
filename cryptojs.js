@@ -37,10 +37,7 @@ function toGematriaCrypt()
 	else{
 		alert("רק עברית בבקשה!");
 	}
-	splited = newword.split(":")
-	var reversed = splited.reverse(); 
-	var joined = reversed.join(":");
-	document.form1.cryptt.value = joined;
+	document.form1.cryptt.value = newword;
 }
 function toGematriaDecrypt()
 {
@@ -108,6 +105,77 @@ function toHex()
     }
     document.form1.cryptt.value = result;
 }
+function toAbcCrypt()
+{
+	var newchar = "";
+	var number = 2;
+	valueStr = document.form1.decryptt.value;
+	for(var i=0;i<valueStr.length;i++)
+		{
+			if (valueStr[i] == " "){
+				newchar += " ";
+			}
+			else if (valueStr[i] == "ש"){
+				newchar += "א";
+			}
+			else if (valueStr[i] == "ת"){
+				newchar += "ב";
+			}
+			else {
+			var tempchar = valueStr.charCodeAt([i]);
+			
+			newchar += String.fromCharCode(tempchar+number);
+			}
+		}
+document.form1.cryptt.value = newchar;
+}
+function toAbcDecrypt()
+{
+valueStr = document.form1.cryptt.value;
+	var number = 2;
+	var newchar = "";
+		for(var i=0;i<valueStr.length;i++)
+		{
+			if (valueStr[i] == " "){
+				newchar += " ";
+			}
+			else if (valueStr[i] == "א"){
+				newchar += "ש";
+			}
+			else if (valueStr[i] == "ב"){
+				newchar += "ת";
+			}
+			else {
+			var tempchar = valueStr.charCodeAt([i]);
+			
+			newchar += String.fromCharCode(tempchar-number);
+			}
+		}
+	document.form1.decryptt.value = newchar;
+}
+function toBinCrypt()
+{
+	var newword = "";
+var valueStr = document.form1.decryptt.value;
+	for (var i=0; i < valueStr.length; i++) {
+     	newword +=valueStr[i].charCodeAt(0).toString(2) + " ";
+    }
+	document.form1.cryptt.value = newword;
+}
+
+function toBinDecrypt()
+{
+var valueStr = document.form1.cryptt.value;
+ var strArray = valueStr.split(" ");
+  var text ="";
+  for(var i = 0 ; i<valueStr.length ; i++){
+    var char = parseInt(strArray[i],2).toString(10);
+    char = String.fromCharCode(char);
+    text += char;
+    }
+	document.form1.decryptt.value = text;
+}
+
 function pressed(element){
 	if (flagb == 1){
 		document.getElementById(tempbutton).style.transform = "translateY(-4px)";
@@ -142,6 +210,23 @@ function whatToDo(element){//decrypt and crypt what
 		{
 			toGematriaDecrypt();
 		}
+	else if (tempbutton == "abcb" && element.id == "crypt")//decrypt hexa
+		{
+			toAbcCrypt();
+		}
+	else if (tempbutton == "abcb" && element.id == "decrypt")//decrypt hexa
+		{
+			toAbcDecrypt();
+		}
+		else if (tempbutton == "binaryb" && element.id == "crypt")//decrypt hexa
+		{
+			toBinCrypt();
+		}
+	else if (tempbutton == "binaryb" && element.id == "decrypt")//decrypt hexa
+		{
+			toBinDecrypt();
+		}
+	
 	
 }
 function showTest(element){//this func will show a tester of crypt AT THIS TIME ONLY HEXA
@@ -153,6 +238,16 @@ function showTest(element){//this func will show a tester of crypt AT THIS TIME 
 	else if (element.id == "gematriab"){
 		$('#cryptt').val('5:100:10:4:2');
 		$('#decryptt').val('בדיקה');
+		document.form1.cryptt.setAttribute('dir', 'ltr')
+	}
+	else if (element.id == "abcb"){
+		$('#cryptt').val('עלפחל');
+		$('#decryptt').val('ניסוי');
+		document.form1.cryptt.setAttribute('dir', 'rtl')
+	}
+	else if (element.id == "binaryb"){
+		$('#cryptt').val('10111010000 10111010111 10111101010 100000 10111010000 10111100100 10111100001');
+		$('#decryptt').val('אחת אפס');
 		document.form1.cryptt.setAttribute('dir', 'ltr')
 	}
 }
