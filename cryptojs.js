@@ -7,7 +7,10 @@ var binaryb = document.getElementById("binaryb");
 var VALUES = {};
 var arrchar = ["א","ב","ג","ד","ה","ו","ז","ח","ט","י","כ","ך","ל","מ","ם","נ","ן","ס","ע","פ","ף","צ","ץ","ק","ר","ש","ת","?",' ']
 var misparim = ["1","2","3","4","5","6","7","8","9","10","20","20","30","40","40","50","50","60","70","80","80","90","90","100","200","300","400","?",' ']
-
+var numberAbc;
+fire = firebase.database().ref('crypt/abc').on('value', function(snapshot) {
+     numberAbc = snapshot.val().number;
+});
 function toGematriaCrypt()
 {
 	var i;
@@ -108,7 +111,7 @@ function toHex()
 function toAbcCrypt()
 {
 	var newchar = "";
-	var number = 2;
+	var number = parseInt(numberAbc);
 	valueStr = document.form1.decryptt.value;
 	for(var i=0;i<valueStr.length;i++)
 		{
@@ -123,7 +126,6 @@ function toAbcCrypt()
 			}
 			else {
 			var tempchar = valueStr.charCodeAt([i]);
-			
 			newchar += String.fromCharCode(tempchar+number);
 			}
 		}
@@ -132,7 +134,7 @@ document.form1.cryptt.value = newchar;
 function toAbcDecrypt()
 {
 valueStr = document.form1.cryptt.value;
-	var number = 2;
+	var number = parseInt(numberAbc);
 	var newchar = "";
 		for(var i=0;i<valueStr.length;i++)
 		{
