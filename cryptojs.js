@@ -118,11 +118,15 @@ function toAbcCrypt()
 			if (valueStr[i] == " "){
 				newchar += " ";
 			}
-			else if (valueStr[i] == "ש"){
-				newchar += "א";
+			else if (valueStr.charCodeAt([i]) > 1514-number  && valueStr.charCodeAt([i]) > 1488){
+				var efresh = valueStr.charCodeAt([i]) - 1514;
+				var counter = number+efresh-1;
+				newchar += String.fromCharCode(1488+counter);	
 			}
-			else if (valueStr[i] == "ת"){
-				newchar += "ב";
+			else if (valueStr.charCodeAt([i]) > 122-number && valueStr.charCodeAt([i]) < 123){
+				var efresh = valueStr.charCodeAt([i]) - 122;
+				var counter = number+efresh-1;
+				newchar += String.fromCharCode(97+counter);	
 			}
 			else {
 			var tempchar = valueStr.charCodeAt([i]);
@@ -141,11 +145,15 @@ valueStr = document.form1.cryptt.value;
 			if (valueStr[i] == " "){
 				newchar += " ";
 			}
-			else if (valueStr[i] == "א"){
-				newchar += "ש";
+			else if (valueStr.charCodeAt([i]) < 1488+number && valueStr.charCodeAt([i]) > 1487 ){
+				var efresh = valueStr.charCodeAt([i]) - 1488;
+				var counter = number-efresh-1;
+				newchar += String.fromCharCode(1514-counter);	
 			}
-			else if (valueStr[i] == "ב"){
-				newchar += "ת";
+			else if (valueStr.charCodeAt([i]) < 97+number && valueStr.charCodeAt([i]) < 123 ){
+				var efresh = valueStr.charCodeAt([i]) - 97;
+				var counter = number-efresh-1;
+				newchar += String.fromCharCode(122-counter);	
 			}
 			else {
 			var tempchar = valueStr.charCodeAt([i]);
