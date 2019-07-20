@@ -1,6 +1,8 @@
 body {
  background-image: url("images/back.jpg");
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 
 }header {
 	border-bottom: 6px solid WHITE;
