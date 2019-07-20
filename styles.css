@@ -433,6 +433,10 @@ text-align: center;
 #guess{
 	background-color: red;
 }
+#back{
+	background-color: red;
+	float: right;
+}
 #cryptotxt{
 background-color: white;
   width: 80%;
@@ -465,8 +469,6 @@ text-transform: none;
     width:230px;
 	float:left;
 }
-
-
 /*menu*/
 #leftSideMenu { width:850px; height:300px; }
 #leftSideMenu ul { list-style:none; padding:0; margin:0; }

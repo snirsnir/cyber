@@ -3,7 +3,7 @@ var titleofhesber = document.getElementById("titlehesber");
 var descofhesber = document.getElementById("deschesber");
 var titleofshelon = document.getElementById("titleshelon");
 var answersofhesber = document.getElementById("answershesber");
-var screen = 2;
+var screen = 3;
 var whatlesson = addles(screen);
 var countChild;//for counting how much screens in lesson
 var DorQ = "DorQ"; //check if hesber or sheelon
@@ -16,7 +16,15 @@ var checkans = document.getElementsByName("answers");
 var fireScreen;
 var getchecked;
 var hintcounter = 0; //hint counter check false answers
-	document.getElementById("adminheader").innerHTML = "שיעור מספר" + " " + screen; //FOR THE TITLE
+var hint1 = document.getElementById("hint1");
+var hint2 = document.getElementById("hint2");
+var backButton = document.getElementById("back");
+var counterBack = 0;
+var flagbackhide = 0;
+	firebaseHeadingTitle = firebase.database().ref().child('lessons/tabs/').child(whatlesson);
+firebaseHeadingTitle.once('value', function(snapshot) {
+	document.getElementById("adminheader").innerHTML = snapshot.child('title').val(); //FOR THE TITLE
+});
 	firebaseHeadingRef = firebase.database().ref().child('lessons/type/').child(whatlesson);
 firebaseHeadingRef.once('value', function(snapshot) {
 	countChild = snapshot.numChildren(); 	
@@ -29,11 +37,34 @@ function addles(num){ //add les to whatlesson
 function nextScreen() //PRESSING ON NEXT BUTTON INCREASE I
 {
 i++;
+
 answersofhesber.innerText = "";
   document.body.scrollTop = 0;//TOP OF PAGE
   document.documentElement.scrollTop = 0;
 counterans = 1 //resetting the counterans for next shelon
 doagain();
+}
+function backScreen(){
+	if (i == countChild){
+		document.getElementById('next').innerText = 'הבא';
+		document.getElementById('next').style.background='#1084bd';
+	}
+	i--;
+	counterBack--;
+if (counterBack == 1){
+	$('#back').hide();
+}
+	
+	
+		var outputans="";
+	fireScreen = firebase.database().ref().child('lessons/type/').child(whatlesson).child(i);
+	fireScreen.once('value', function(snapshot) {
+	     fireScreen.on('value',function(datasnapshot){
+		titleofhesber.innerText = snapshot.child('title').val();
+		descofhesber.innerText = snapshot.child('desc').val();
+	})
+  
+})
 }
 function doagain()// DO AGAIN DOING THE FUNCTION AT THE FIRST TIME AND CALLED FROM NEXT SCREEN BUTTON
 {
@@ -43,12 +74,23 @@ function doagain()// DO AGAIN DOING THE FUNCTION AT THE FIRST TIME AND CALLED FR
   if (snapshot.child(DorQ).val() == "0") { //CHECK IF HESBER OR SHEELON 0 HESBER 1 SHEELON IF 0 TRUE
 	  $('#shelonD2').hide();
 	  $('#hesberD2').show();
+	  counterBack++; //for enabling backbutton;
+	  if (counterBack == 2){
+		  $('#back').show();
+	  }
 	     fireScreen.on('value',function(datasnapshot){
 		titleofhesber.innerText = snapshot.child('title').val();
 		descofhesber.innerText = snapshot.child('desc').val();
 	})
   }
 		else if (snapshot.child(DorQ).val() == "1"){
+			counterBack = 0; //disable the counterback button
+			hintcounter = 0 // resetting hints counter
+			$('#hint1').hide();
+			$('#hint2').hide();
+			$('#guess').show();
+			$('#back').hide();
+			$('#next').hide();
 			$('#hesberD2').hide();
 			$('#shelonD2').show();
 			fireScreen.on('value',function(datasnapshot){
@@ -58,10 +100,10 @@ function doagain()// DO AGAIN DOING THE FUNCTION AT THE FIRST TIME AND CALLED FR
 	    answerscount = snapshot.numChildren(); 
 });
 		for (var j=0;j<answerscount;j++){
-			outputans+= '<input type="radio" class="stam" value='+ counterans +' name="answers" onclick=getnumber(value) >' + snapshot.child('answers/'+j).val() + '<br><br>';
+			outputans+= '<input type="radio" class="stam" id='+counterans+' value='+ counterans +' name="answers" onclick=getnumber(value) >' + snapshot.child('answers/'+j).val() + '<br><br>';
 			document.getElementById("answershesber").innerHTML=outputans;
 			counterans++;	
-		}		
+		}
 	})
 		}
 		if(i>1){//now the countchild can be counted!
@@ -78,20 +120,31 @@ function doagain()// DO AGAIN DOING THE FUNCTION AT THE FIRST TIME AND CALLED FR
 function shelonans(){//onclick GUESS BUTTON
 			fireScreen.once('value', function(snapshot) {
 	    var correct = snapshot.child('correct').val();
-				if(getchecked == correct){
-					alert("great");
+				hint1.innerText = "רמז מספר 1:" + " " + snapshot.child('hints/hint1').val();
+				hint2.innerText = "רמז מספר 2:" + " " + snapshot.child('hints/hint2').val();
+				if (!getchecked){
+					alert("חייב לבחור");
+				}
+				else if(getchecked == correct){
+					alert("נכון מאוד");
+					$('#next').show();
+					$('#guess').hide();
 				}
 				else{
 					hintcounter++;
-					alert("bad");
 					if(hintcounter == 1){
 					$('#hint1').show();
+						alert("טעית");
 					}
 					 if (hintcounter == 2){
 						$('#hint2').show();
+						 alert("טעית");
 					}
 					if (hintcounter == 3){
-						alert("bla");
+						alert("טעית פעם נוספת, התשובה הנכונה תסומן");
+						checkRadio(correct);
+						$('#guess').hide();
+						$('#next').show();
 					}
 				}
 				   
@@ -100,7 +153,9 @@ function shelonans(){//onclick GUESS BUTTON
 function getnumber(value){
 		getchecked = value;
 }
-
+function checkRadio(id) {//FUNC THAT CHECKED THE CORRECT ANS IF 3 FALSE
+    document.getElementById(id).checked = true;
+}
 
 
 
