@@ -3,7 +3,7 @@ var titleofhesber = document.getElementById("titlehesber");
 var descofhesber = document.getElementById("deschesber");
 var titleofshelon = document.getElementById("titleshelon");
 var answersofhesber = document.getElementById("answershesber");
-var screen = 1;
+var screen = 2;
 var whatlesson = addles(screen);
 var countChild;//for counting how much screens in lesson
 var DorQ = "DorQ"; //check if hesber or sheelon
@@ -15,6 +15,7 @@ var counterans=1 //counting the answers for names!
 var checkans = document.getElementsByName("answers");
 var fireScreen;
 var getchecked;
+var hintcounter = 0; //hint counter check false answers
 	document.getElementById("adminheader").innerHTML = "שיעור מספר" + " " + screen; //FOR THE TITLE
 	firebaseHeadingRef = firebase.database().ref().child('lessons/type/').child(whatlesson);
 firebaseHeadingRef.once('value', function(snapshot) {
@@ -81,7 +82,17 @@ function shelonans(){//onclick GUESS BUTTON
 					alert("great");
 				}
 				else{
+					hintcounter++;
 					alert("bad");
+					if(hintcounter == 1){
+					$('#hint1').show();
+					}
+					 if (hintcounter == 2){
+						$('#hint2').show();
+					}
+					if (hintcounter == 3){
+						alert("bla");
+					}
 				}
 				   
 });

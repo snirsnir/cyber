@@ -317,6 +317,20 @@ top: 29.5%;
 	font-size: 25px;
 	background-color: #f8f8f8;
 }
+#hint1 {
+	 border: 10px solid darkgrey;
+  border-radius: 4px;
+	text-align: right;
+	font-size: 25px;
+	background-color: #f8f8f8;
+}
+#hint2 {
+	 border: 10px solid darkgrey;
+  border-radius: 4px;
+	text-align: right;
+	font-size: 25px;
+	background-color: #f8f8f8;
+}
 #addingradio {
 	 border: 10px solid darkgrey;
   border-radius: 4px;
