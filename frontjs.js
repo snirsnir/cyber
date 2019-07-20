@@ -3,7 +3,7 @@ var titleofhesber = document.getElementById("titlehesber");
 var descofhesber = document.getElementById("deschesber");
 var titleofshelon = document.getElementById("titleshelon");
 var answersofhesber = document.getElementById("answershesber");
-var screen = 3;
+var screen = 1;
 var whatlesson = addles(screen);
 var countChild;//for counting how much screens in lesson
 var DorQ = "DorQ"; //check if hesber or sheelon
