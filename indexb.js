@@ -1,5 +1,11 @@
 // JavaScript Documentdadsa
  //CLICKS COUNTER 
+//////////////////////// for the images////////
+var uploader = document.getElementById('uploader');
+var fileButton = document.getElementById('fileButton');
+const file = document.querySelector('#fileButton');
+window.picture;
+//////////////////////// for the images////////
 	     var clicks = 1;
 		document.getElementById("counter").innerHTML = clicks;
 	    var rb = [];
@@ -20,6 +26,9 @@ function nextScreen()
 			if (clicks == 1){
 			$('#backb').show();
 		}
+	
+  file.value = '';
+	uploader.value = " "
         clicks ++;
         document.getElementById("counter").innerHTML = clicks;
 	var whathide = document.getElementById("hesberD");
@@ -39,6 +48,7 @@ function nextScreen()
 	var firebaseRef2 = firebase.database().ref('lessons/type').child(formaction).child(clicks-1).child('answers');
 	var firebaseRef3 = firebase.database().ref('lessons/type').child(formaction).child(clicks-1).child('hints');
 	//------------------------------------------to if!!//
+	firebaseRef.child("picture").set(picture);
 	 if (window.getComputedStyle(whathide).display === "none") { //if hesber is hidden
 		 flagDorQ = 1;
 		 firebaseRef.child("DorQ").set(flagDorQ);
@@ -70,7 +80,10 @@ document.form1.action = formaction;
 	document.getElementById("writequest").value= "";
 	}
 }
-		function backScreen() { // retrive counter of screen
+		function backScreen() {
+			 file.value = '';
+	uploader.value = " "
+			// retrive counter of screen
 		if (clicks == 2){ //2 BECAUSE VAR STARTS WITH 1
 			$('#backb').hide();
 		}
@@ -99,4 +112,39 @@ function chooseScreen(){
 	document.getElementById("counter").innerHTML = screen;
 	clicks = screen;
 	
+}
+
+fileButton.addEventListener('change',function(e){
+	var e2 = document.getElementById("formchoice");
+	var lesname = e2.options[e2.selectedIndex].value;
+	var file = e.target.files[0];
+	var storageRef = firebase.storage().ref('frontImages').child(lesname).child(getString());
+	var task = storageRef.put(file);
+	task.on('state_changed',
+			function progress(snapshot){
+		var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+		uploader.value = percentage;
+		
+	},
+			function error(err){
+		
+		
+	},
+			
+			function complete(){
+		task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+			window.picture = downloadURL;
+			
+	}
+		
+	);
+} ) ; 
+} );
+function getString(){//getting string to the firebase ref
+	var n = clicks.toString();
+	return n;
+}
+function resetButton(){//getting string to the firebase ref
+	 file.value = '';
+	uploader.value = " "
 }

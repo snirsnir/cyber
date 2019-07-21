@@ -2,30 +2,20 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>שיעורים</title>
+<title>כרטיסיית שיעור</title>
 <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 
-<body onload="doagain()">
-<h1 id="adminheader"></h1>
-	<img id="imagefront">
-	<div class="textbox" id="hesberD2">
-				<h2 id="titlehesber"></h2>
-		<h2 id="deschesber" dir="rtl"></h2>
+<body>
+	<div class="textbox" id="tabD2">
+		<img id="imagefronttab">
+			<h2 id="titletab"></h2>
+		<h2 id="descotab" dir="rtl"></h2>
+		<button class="button" id="gofront" onclick="goFront()">היכנס</button>
 	</div>
-	<div id="shelonD2">
-				<h2 id="titleshelon"></h2>
-		<h2 id="answershesber" dir="rtl"></h2>
-		<h2 id="hint1" style="display: none"></h2>
-		<h2 id="hint2" style="display: none"></h2>
-	<center>	<button class="button" id="guess" onclick="shelonans()">ענה</button> </center>
-	</div>
-
-  <button class="button" id="next" onclick="nextScreen()">הבא</button>
-  <button class="button" id="back" style="display: none" onclick="backScreen()">הקודם</button>
 	
 	
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
@@ -49,7 +39,7 @@
 </script>
 	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-	<script src="frontjs.js"></script>
+	<script src="fronttabjs.js"></script>
 </body>
 	
 </html>

@@ -242,8 +242,8 @@ top: 29.5%;
 #adminheader2{
 	text-align: right;
 	color: white;
-	font-size: 50px;
-	-webkit-text-stroke: 2px black;
+	font-size: 30px;
+	
 	
 	
 }
@@ -380,6 +380,45 @@ background-color: white;
   margin: auto;
   display: none
 }
+#tabD2{
+background-color: white;
+  width: 80%;
+  border: 14px inset #7765AD;
+  border-radius: 40px;
+  position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 800px;
+        height: 400px;
+}
+#descotab{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 35px;
+letter-spacing: 0px;
+word-spacing: 2px;
+color: #545454;
+font-weight: 400;
+text-decoration: none solid rgb(68, 68, 68);
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+#titletab{
+font-family: "Arial Black", Gadget, sans-serif;
+font-size: 35px;
+letter-spacing: 0px;
+word-spacing: 2px;
+color: #000000;
+font-weight: 700;
+text-decoration: underline solid rgb(68, 68, 68);
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+text-align: center;
+}
 #shelonD2{
 background-color: #eed0d0;
   width: 80%;
@@ -474,3 +513,44 @@ text-transform: none;
 #leftSideMenu ul { list-style:none; padding:0; margin:0; }
 #leftSideMenu ul li {  }
 #leftSideMenu ul li a { display:block;  font-size:24px;}
+
+#imagefront {
+border-radius:50px;
+-moz-border-radius:50px;
+-webkit-border-radius:50px;
+	border:9px double #000000;
+	z-index: 1; 
+  border-radius: 8px;
+	position: relative;
+    float: left;
+	left: 11%;
+    width:  200px;
+    height: 200px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+#imagefronttab {
+border-radius:50px;
+-moz-border-radius:50px;
+-webkit-border-radius:50px;
+	border:9px double #000000;
+  border-radius: 8px;
+	position: absolute;
+    float: left;
+	left: 1%;
+    width:  90px;
+    height: 90px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+#gofront
+{
+	  height:60px; 
+    width:130px; 
+    margin: -20px -65px; 
+    position:relative;
+    top:50%; 
+    left:50%;
+}

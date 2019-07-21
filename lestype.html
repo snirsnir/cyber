@@ -83,13 +83,18 @@
 	<textarea id="writequest" rows="10" cols="40">
 </textarea>
 </div>
-
+<h2 id="adminheader2" > העלה תמונת לשאלון/הסבר:</h2>
+		<progress value="0" max="100" id="uploader">0%</progress>
+		<input type="file" value="upload" id="fileButton"/>
+		<button id="resetbutton" type="button3" onclick="resetButton()" >איפוס בחירה</button>
 		<br><br><br><br>
-	<button class="button" onclick="nextScreen()">למסך הבא</button>
-	<button id="backb" class="button" style="display: none" onclick="backScreen()">חזרה למסך הקודם</button>
 		<h2 id="adminheader2" > אם ברצונך לדלג למסך מסוים בחר אותו כאן:</h2>
 		<input type="text" id="screen" name="screen" >
 		<button class="button" onclick="chooseScreen()">בחר מסך</button>
+		<br><br><br>
+	<button class="button" onclick="nextScreen()">למסך הבא</button>
+	<button id="backb" class="button" style="display: none" onclick="backScreen()">חזרה למסך הקודם</button>
+		
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>

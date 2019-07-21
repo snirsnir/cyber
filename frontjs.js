@@ -3,7 +3,8 @@ var titleofhesber = document.getElementById("titlehesber");
 var descofhesber = document.getElementById("deschesber");
 var titleofshelon = document.getElementById("titleshelon");
 var answersofhesber = document.getElementById("answershesber");
-var screen = 1;
+var imageFront = document.getElementById("imagefront");
+var screen = 10;
 var whatlesson = addles(screen);
 var countChild;//for counting how much screens in lesson
 var DorQ = "DorQ"; //check if hesber or sheelon
@@ -81,6 +82,8 @@ function doagain()// DO AGAIN DOING THE FUNCTION AT THE FIRST TIME AND CALLED FR
 	     fireScreen.on('value',function(datasnapshot){
 		titleofhesber.innerText = snapshot.child('title').val();
 		descofhesber.innerText = snapshot.child('desc').val();
+		imageFront.src = snapshot.child('picture').val();
+	    
 	})
   }
 		else if (snapshot.child(DorQ).val() == "1"){
@@ -94,6 +97,7 @@ function doagain()// DO AGAIN DOING THE FUNCTION AT THE FIRST TIME AND CALLED FR
 			$('#hesberD2').hide();
 			$('#shelonD2').show();
 			fireScreen.on('value',function(datasnapshot){
+		imageFront.src = snapshot.child('picture').val();
 		titleofshelon.innerText = snapshot.child('title').val();
 		var fireanswers = firebase.database().ref().child('lessons/type/').child(whatlesson).child(i).child('answers');
 		fireanswers.once('value', function(snapshot) {
