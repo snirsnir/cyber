@@ -1,7 +1,7 @@
 var titletab = document.getElementById("titletab");
 var descotab = document.getElementById("descotab");
 var imageFronttab = document.getElementById("imagefronttab");
-var screen = 1;
+var screen = 2;
 var whatlesson = addles(screen);
 window.onload = function() {
 	fireScreen = firebase.database().ref().child('lessons/tabs').child(whatlesson);
@@ -15,7 +15,9 @@ window.onload = function() {
 })
 }
 
-
+function goFront(){
+	localStorage.setItem("screen",screen);
+}
 
 
 

@@ -4,7 +4,7 @@ var descofhesber = document.getElementById("deschesber");
 var titleofshelon = document.getElementById("titleshelon");
 var answersofhesber = document.getElementById("answershesber");
 var imageFront = document.getElementById("imagefront");
-var screen = 10;
+var screen = localStorage.getItem("screen");
 var whatlesson = addles(screen);
 var countChild;//for counting how much screens in lesson
 var DorQ = "DorQ"; //check if hesber or sheelon
