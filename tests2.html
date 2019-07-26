@@ -1,143 +1,80 @@
-<!DOCTYPE html> 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head runat="server">
-
-    <title></title>
-
-    <script type="text/javascript">
-
- 
-
-    /* Getting Id of Div in which radio button will be add*/
-
-        var containerDivClientId = "<%= containerDiv.ClientID %>";
-
- 
-
-    /*variable count uses for define unique Ids of radio buttons and group name*/
-
-        var count = 100;
-
- 
-
-    /*This function call by button OnClientClick event and uses for create radio buttons*/
-
-        function dynamicRadioButton()
-
-        {
-
-            /* create a radio button */
-
-            var radioYes = document.createElement("input");
-
-            radioYes.setAttribute("type", "radio");
-
- 
-
-            /*Set id of new created radio button*/
-
-            radioYes.setAttribute("id", "radioYes" + count);
-
- 
-
-            /*set unique group name for pair of Yes / No */
-
-            radioYes.setAttribute("name", "Boolean" + count);
-
- 
-
-            /*creating label for Text to Radio button*/
-
-            var lblYes = document.createElement("lable");
-
- 
-
-            /*create text node for label Text which display for Radio button*/
-
-            var textYes = document.createTextNode("Yes");
-
- 
-
-            /*add text to new create lable*/
-
-            lblYes.appendChild(textYes);
-
- 
-
-            /*add radio button to Div*/
-
-            containerDiv.appendChild(radioYes);
-
- 
-
-            /*add label text for radio button to Div*/
-
-            containerDiv.appendChild(lblYes);
-
- 
-
-            /*add space between two radio buttons*/
-
-            var space = document.createElement("span");
-
-            space.setAttribute("innerHTML", "&nbsp;&nbsp");
-
-            containerDiv.appendChild(space);
-
- 
-
-            var radioNo = document.createElement("input");
-
-            radioNo.setAttribute("type", "radio");
-
-            radioNo.setAttribute("id", "radioNo" + count);
-
-            radioNo.setAttribute("name", "Boolean" + count);
-
- 
-
-            var lblNo = document.createElement("label");
-
-            lblNo.innerHTML =  "No";
-
-            containerDiv.appendChild(radioNo);
-
-            containerDiv.appendChild(lblNo); 
-
-            /*add new line for new pair of radio buttons*/
-
-            var spaceBr= document.createElement("br");
-
-            containerDiv.appendChild(spaceBr);
-
- 
-
-            count++;
-
-            return false;
-
-        }
-
-    </script>
-
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>שיעורים</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
+	<style>
+	
+	.modal-body {
+    max-width: 100%;
+    overflow-x: auto;
+}
 
-    <form id="form1" runat="server">
+.list-group{
+   width: 180px;
+    float: left;
+    margin-left: 10px
+}
+	</style>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
 
-    <div>
+                </button>
+                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
 
-    <asp:Button ID="btnCreate" runat="server" Text="Click Me" OnClientClick="return dynamicRadioButton();" />
+            </div>
+            <div class="modal-body">
+                <div class="scoll-tree">
+                    <div class="list-group" ng-repeat="item in items"> 
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
 
-    <div id="containerDiv" runat="server"></div>
+                    </div>
+                    <div class="list-group" ng-repeat="item in items"> 
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
 
+                    </div>
+                    <div class="list-group" ng-repeat="item in items"> 
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+
+                    </div>
+                    <div class="list-group" ng-repeat="item in items"> 
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+                        <a class="list-group-item" href="javascript:void(0);" ng-click="getChildren(item)">{{item.value}}</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
     </div>
+</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+var totalwidth = 190 * $('.list-group').length;
 
-    </form>
-
-</body>
-
-</html> 
+$('.scoll-tree').css('width', totalwidth);
+	</script>
+	</body>
+</html>

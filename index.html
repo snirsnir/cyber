@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <title>Cyberspace</title>
 <link href="styles.css" rel="stylesheet" type="text/css">
+<link href='http://serve.fontsproject.com/css?family=Ozrad+CLM:700'
+  rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -14,71 +16,95 @@
 	<h5 href="index.html"><img src="images/trophy.png" width="50" height="40" alt="chat"></h5>
 	
 	</header>
-	
+	<div id="mainButtons">
   <button class="button" id="safe">כספת אישית</button>
   <button class="button" id="playground">מגרש משחקים</button>
   <button class="button" id="lessons">שיעורים</button>
   <button class="button" id="store">חנות</button>
   <button class="button" id="crypt" onclick="location.href='crypto.html'">קריפטוגרף</button>
-	<!-- The Modal -->
-<div id="myModal" class="modal">
+	</div>
+<div id="myModal" class="dragscroll">
 
   <!-- Modal content -->
   <div class="modal-content">
+	  <div class="square">
+	 <h3 class="titlelessons" id="titleles">שיעור מספר 1</h3>
+		  <img class="titleimages" id="img1t" src="https://www.cbrgovernment.com/wp-content/uploads/2017/12/Hacking_password_illustration-777x437.jpg">
+		  <br><br><br><br><br><br><br><br><br>
+	 <button class="button" id="lesbut1" onclick="goTab(this)">היכנס לשיעור</button>
+		  
+	</div>
+	   <div class="square">
+	 <h3 class="titlelessons" id="titleles">שיעור מספר 2</h3>
+		  <img class="titleimages" id="img2t" src="https://www.abc.net.au/news/image/9366080-3x2-700x467.jpg">
+		  <br><br><br><br><br><br><br><br><br>
+	 <button class="button" id="lesbut2" onclick="goTab(this)">היכנס לשיעור</button>
+		  
+	</div>
+	   <div class="square">
+	 <h3 class="titlelessons" id="titleles">שיעור מספר 3</h3>
+		  <img class="titleimages" id="img3t" src="https://dpsvdv74uwwos.cloudfront.net/statics/img/ogimage/Hacking-iot-devices-using-web-based-attacks.jpg">
+		  <br><br><br><br><br><br><br><br><br>
+	 <button class="button" id="lesbut3" onclick="goTab(this)">היכנס לשיעור</button>
+		  
+	</div>
+	   <div class="square">
+	 <h3 class="titlelessons" id="titleles">שיעור מספר 4</h3>
+		  <img class="titleimages" id="img4t" src="https://i.ytimg.com/vi/oOoMqgnvZaY/maxresdefault.jpg" alt="W3Schools.com">
+		  <br><br><br><br><br><br><br><br><br>
+	 <button class="button" id="lesbut4" onclick="goTab(this)">היכנס לשיעור</button>
+		  
+	</div>
+	   <div class="square">
+	 <h3 class="titlelessons" id="titleles">שיעור מספר 5</h3>
+		  <img class="titleimages" id="img5t" src="https://cdn.arstechnica.net/wp-content/uploads/2017/03/smart-tv-exploit-800x441.jpg" alt="W3Schools.com">
+		  <br><br><br><br><br><br><br><br><br>
+	 <button class="button" id="lesbut5" onclick="goTab(this)">היכנס לשיעור</button>
+		  
+	</div>
+	   <div class="square">
+	 <h3 class="titlelessons" id="titleles">שיעור מספר 6</h3>
+		  <img class="titleimages" id="img6t" src="https://www.sourcingmonk.com/content/images/2015/02/green-hacking_00308875-fix.jpg" alt="W3Schools.com">
+		  <br><br><br><br><br><br><br><br><br>
+	 <button class="button" id="lesbut6" onclick="goTab(this)">היכנס לשיעור</button>
+		  
+	</div>
+	
+
+	  </div>
     <span class="close">&times;</span>
-    <button class="button" id="les1">שיעור 1</button>
-	  <button class="button" id="les2">שיעור 2</button>
-	  <div id="img-holder">
-    <img src="images/locker.png" alt="locker"/>
-		  <a class="link" href=""></a>
 </div>
-  </div>
 
-</div>
-	<div id="myModal2" class="modal2">
 
-  <!-- Modal2 content -->
-  <div class="modal-content2">
-    <span class="close2">&times;</span>
-	 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeBcMz3CPglW9AP0JxB3bdty1js_FVi9WBywO4pDU0lOYuLhg/viewform?vc=0&c=0&w=1" height="1000" width="1500"></iframe>
-  </div>
 
-</div>
-	
-	
-	<script type="text/javascript">
-		var modal = document.getElementById('myModal');
-	    var btn = document.getElementById("lessons");
-		var span = document.getElementsByClassName("close")[0];
-		var span2 = document.getElementsByClassName("close2")[0];
-		var les1 = document.getElementById("les1");
-		var modal2 = document.getElementById('myModal2');
-		btn.onclick = function() {
-  		modal.style.display = "block";
-}
-		span.onclick = function() {
-  modal.style.display = "none";
-}
-		window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-			 if (event.target == modal2) {
-    modal2.style.display = "none";
-  }
-}
-									les1.onclick = function() {
-  		modal2.style.display = "block";
-}
-  span2.onclick = function() {
-  modal2.style.display = "none";
-}
-  
-  
-  
-  
-	</script>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAqXiyzo7VujlIMsrKTadJA8HNbBXoIb6o",
+    authDomain: "cyberspace-8dfc9.firebaseapp.com",
+    databaseURL: "https://cyberspace-8dfc9.firebaseio.com",
+    projectId: "cyberspace-8dfc9",
+    storageBucket: "cyberspace-8dfc9.appspot.com",
+    messagingSenderId: "996627579496",
+    appId: "1:996627579496:web:9ad511a1518c575c"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+	 <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
+	<script src="indexjs.js"></script>
 </body>
 	
 </html>

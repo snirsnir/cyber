@@ -27,6 +27,13 @@ body header h5 {
 	margin-top: -136px;
 }
 
+#mainButtons {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
 
 
 .button {
@@ -99,28 +106,7 @@ body header h5 {
 }
 
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 20%; /* Location of the box */
-  left: 0%;
-  top: 0%;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-/* Modal Content */
-.modal-content {
-  background-image: url("https://wallpapercave.com/wp/pWjhOj3.jpg");
-  margin: auto;
-  padding: 70px;
-  border: 1px solid #888;
-  width: 80%;
-	
-}
+
 
 .modal2 {
   display: none; /* Hidden by default */
@@ -168,9 +154,9 @@ body header h5 {
 /* The Close Button */
 .close {
   color: #aaaaaa;
-	position: absolute;
-	   top: 27.5%;
-        left: 91.5%;  
+	position:fixed;
+	   top: 53%;
+        left: 98.0%;  
   font-size: 58px;
   font-weight: bold;
 }
@@ -214,9 +200,11 @@ body header h5 {
   cursor: pointer;
 }
 #les1{
-	position: absolute;
-        top: 15%;
-        left: 7%;          
+    position:relative;
+	width:300px;
+	top: 80%;
+	
+	margin-left: 20%
     }
 #les2{
 	position: absolute;
@@ -554,3 +542,93 @@ border-radius:50px;
     top:50%; 
     left:50%;
 }
+
+		.square {
+			display:inline-block;
+			overflow-x:auto;
+			height: 300px;
+			margin-left: 20px;
+  width: 400px;
+			background: rgba(210,255,82,1);
+background: -moz-linear-gradient(left, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(210,255,82,1)), color-stop(100%, rgba(145,232,66,1)));
+background: -webkit-linear-gradient(left, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+background: -o-linear-gradient(left, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+background: -ms-linear-gradient(left, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+background: linear-gradient(to right, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842', GradientType=1 );
+	border-radius: 72px 72px 72px 72px;
+-moz-border-radius: 72px 72px 72px 72px;
+-webkit-border-radius: 72px 72px 72px 72px;
+border: 6px solid #ffffff;
+			-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.dragscroll {
+	   
+	position: fixed;
+    border:dotted 1px;
+    white-space:nowrap;
+  display: none; /* Hidden by default */
+  padding: 100px;
+  z-index: 1; /* Sit on top */
+  left: 0%;
+  top: 0%;
+ width: 100%;
+  overflow-x: auto;
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+  margin-top: 25%;
+  width: 150%;
+	
+	
+}
+#lesbut1,#lesbut2,#lesbut3,#lesbut4,#lesbut5,#lesbut6{
+ height:50px; 
+    width:160px; 
+    margin: -20px -65px; 
+    position:relative;
+    top:80%; 
+    left:45%;
+	padding: 0px;
+	text-align: center;
+}
+.titlelessons {
+	font-family: 'Ozrad CLM', serif;
+	font-size: 30px;
+	text-align: center;
+}
+.titleimages {
+
+	border-radius:50px;
+-moz-border-radius:50px;
+-webkit-border-radius:50px;
+	border:9px double #000000;
+  border-radius: 8px;
+	position:absolute;
+    width:  380px;
+    height: 140px;
+	top: 57%;
+	
+    
+}
+#overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	text-align: center;
+	z-index: 9999;
+	display: none;
+}
+iframe {
+		margin-top: 10%;
+	}
+	
