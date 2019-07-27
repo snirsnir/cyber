@@ -616,7 +616,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 	
 	
 }
-#lesbut1,#lesbut2,#lesbut3,#lesbut4,#lesbut5,#lesbut6{
+#lesbut2,#lesbut3,#lesbut4,#lesbut5,#lesbut6{
  height:50px; 
     width:160px; 
     margin: -20px -65px; 
@@ -658,4 +658,26 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 iframe {
 		margin-top: 10%;
 	}
+#activeornot {
+	font-family: Arial, Helvetica, sans-serif;
+font-size: 35px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #FFFFFF;
+font-weight: 700;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+#lesbut1{
+ height:50px; 
+    width:160px; 
+    margin: -20px -65px; 
+    position:relative;
+    top:80%; 
+    left:45%;
+	padding: 0px;
+	text-align: center;
+}
 	

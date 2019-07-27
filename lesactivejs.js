@@ -20,10 +20,12 @@ var lesname2 = e2.options[e2.selectedIndex].value;
 	fireScreen2.once('value', function(snapshot) {
   if (snapshot.child("active").val() == "1") { 
 	  document.getElementById('activeornot').innerText = 'פעיל';
+	  document.getElementById("activeornot").style.color = "#30964b";
 	  
   }
 		else {
 			 document.getElementById('activeornot').innerText = 'לא פעיל';
+			document.getElementById("activeornot").style.color = "#ad1710";
 		}
 	})
 }
@@ -32,9 +34,11 @@ function setFirebase(lesname){
 	fireScreen.once('value', function(snapshot) {
   if (snapshot.child("active").val() == "1") { 
 	  document.getElementById('activeornot').innerText = 'פעיל';
+	  document.getElementById("activeornot").style.color = "#30964b";
   }
 		else {
 			 document.getElementById('activeornot').innerText = 'לא פעיל';
+			document.getElementById("activeornot").style.color = "#ad1710";
 		}
 	})
 					
