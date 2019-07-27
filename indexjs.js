@@ -49,4 +49,5 @@ function num(num1){ //extract num from the string
 numb = numb.join("");
 return numb
 }
+
 	
