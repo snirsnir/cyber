@@ -62,19 +62,16 @@ return numb
 	return whatless;
 }
     $(window).on('load', function() {
-    	var buttons = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26];
-	var fireScreen = firebase.database().ref().child('lessons/active/');
-	fireScreen.once('value', function(snapshot) {
-	for (var i = 0; i < buttons.length;i++){
-	var temp = addles(buttons[i]);
-	var temp2 = addlesbut(buttons[i]);
-	 fireScreen = firebase.database().ref().child('lessons/active/').child(temp);
-  if (snapshot.child("active").val() == "1") { 
-	  temp2[i].style.backgroundColor = "green";
+var query = firebase.database().ref("lessons/active").orderByKey();
+query.once("value")
+  .then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      // key will be "ada" the first time and "alan" the second time
+      var key = childSnapshot.key;
+		  if (snapshot.child(key).child("active").val() == "1") { 
+	  document.getElementById(temp2).style.background='green';
   }
-	
-	}
-	})	
-})
-
+  });
+});
+	})
 	
