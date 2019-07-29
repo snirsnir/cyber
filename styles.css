@@ -571,7 +571,7 @@ border-radius:50px;
 		.square {
 			display:inline-block;
 			overflow-x:auto;
-			height: 300px;
+			height: 330px;
 			margin-left: 20px;
   width: 400px;
 			background: rgba(210,255,82,1);
@@ -616,7 +616,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 	
 	
 }
-#lesbut2,#lesbut3,#lesbut4,#lesbut5,#lesbut6{
+#lesbut1,#lesbut2,#lesbut3,#lesbut4,#lesbut5,#lesbut6{
  height:50px; 
     width:160px; 
     margin: -20px -65px; 
@@ -669,15 +669,5 @@ text-decoration: none;
 font-style: normal;
 font-variant: normal;
 text-transform: none;
-}
-#lesbut1{
- height:50px; 
-    width:160px; 
-    margin: -20px -65px; 
-    position:relative;
-    top:80%; 
-    left:45%;
-	padding: 0px;
-	text-align: center;
 }
 	

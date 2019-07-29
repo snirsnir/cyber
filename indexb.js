@@ -103,7 +103,7 @@ function addingRadio()
 	$('#approve').append(mybr);
 	rb[counter] = name;
 	counter++;
-	document.getElementById("addingradio").value= "";
+	document.getElementById("input").value= "";
 
 }
 function chooseScreen(){

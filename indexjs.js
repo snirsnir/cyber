@@ -34,7 +34,6 @@ $overlay.click(function() {
     $iframe.attr('src', '');
 });
 function goTab(element){
-	isActive();
 	screen = num(element.id);
 	localStorage.setItem("screen",screen);
     event.preventDefault();
@@ -69,9 +68,24 @@ query.once("value")
       // key will be "ada" the first time and "alan" the second time
       var key = childSnapshot.key;
 		  if (snapshot.child(key).child("active").val() == "1") { 
-	  document.getElementById(temp2).style.background='green';
+	  document.getElementById("lesbut"+num(key)).style.background='green';
   }
+		else {
+			 document.getElementById("lesbut"+num(key)).style.background='gray';
+			document.getElementById("lesbut"+num(key)).onclick = " ";
+			document.getElementById("lesbut"+num(key)).innerText = 'השיעור נעול';
+		}
   });
+		var fireScreen = firebase.database().ref().child('lessons/tabs');
+            fireScreen.once("value")
+      .then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      // key will be "ada" the first time and "alan" the second time
+      var key2 = childSnapshot.key;
+	  var imgt = 'img'+num(key2)+'t';
+	document.getElementById(imgt).src = snapshot.child(key2).child('picture').val();
 });
+	})
+})
 	})
 	
