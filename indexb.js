@@ -43,6 +43,7 @@ function nextScreen()
 		//------------------------------------------to the if!!//
 	var correct = document.getElementById("correct").value
 	var questtitle = document.getElementById("mysquest").value
+	var correctdesc = document.getElementById("correctdesc").value
 	var hint1 = document.getElementById("hint1").value
 	var hint2 = document.getElementById("hint2").value
 	var firebaseRef2 = firebase.database().ref('lessons/type').child(formaction).child(clicks-1).child('answers');
@@ -54,8 +55,10 @@ function nextScreen()
 		 firebaseRef.child("DorQ").set(flagDorQ);
 		 firebaseRef.child("title").set(questtitle);
 		 firebaseRef.child("correct").set(correct);
+		 firebaseRef.child("correctdesc").set(correctdesc);
 		 firebaseRef3.child("hint1").set(hint1);
 		 firebaseRef3.child("hint2").set(hint2);
+		 
 		 var i;
     for (i=0;i<rb.length;i++){
 		firebaseRef2.child(i).set(rb[i]);
@@ -68,6 +71,7 @@ function nextScreen()
 		 document.getElementById("input").value= "";
 		 document.getElementById("hint1").value= "";
 		 document.getElementById("hint2").value= "";
+		 document.getElementById("correctdesc").value= "";
   }
 	else{
 	flagDorQ = 0;

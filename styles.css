@@ -344,6 +344,13 @@ top: 29.5%;
 	font-size: 25px;
 	background-color: #f8f8f8;
 }
+#correctdesc {
+	 border: 10px solid darkgrey;
+  border-radius: 4px;
+	text-align: right;
+	font-size: 25px;
+	background-color: #f8f8f8;
+}
 #addingradio {
 	 border: 10px solid darkgrey;
   border-radius: 4px;
@@ -625,6 +632,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     left:45%;
 	padding: 0px;
 	text-align: center;
+	background-color: gray;
 }
 .titlelessons {
 	font-family: 'Ozrad CLM', serif;
@@ -670,4 +678,5 @@ font-style: normal;
 font-variant: normal;
 text-transform: none;
 }
+
 	

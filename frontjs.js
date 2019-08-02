@@ -19,6 +19,7 @@ var getchecked;
 var hintcounter = 0; //hint counter check false answers
 var hint1 = document.getElementById("hint1");
 var hint2 = document.getElementById("hint2");
+var correctdesc = document.getElementById("correctdesc");
 var backButton = document.getElementById("back");
 var counterBack = 0;
 var flagbackhide = 0;
@@ -91,6 +92,7 @@ function doagain()// DO AGAIN DOING THE FUNCTION AT THE FIRST TIME AND CALLED FR
 			hintcounter = 0 // resetting hints counter
 			$('#hint1').hide();
 			$('#hint2').hide();
+			$('#correctdesc').hide();
 			$('#guess').show();
 			$('#back').hide();
 			$('#next').hide();
@@ -116,7 +118,8 @@ function doagain()// DO AGAIN DOING THE FUNCTION AT THE FIRST TIME AND CALLED FR
 		document.getElementById('next').style.background='red';
 				}
 			if (i == countChild+1){//making onclick
-		document.getElementById("next").onclick = alert("naknik");
+				alert("כל הכבוד! סיימת את השיעור, מיד תועבר למסך הראשי")
+		document.getElementById("next").onclick = window.top.location.href = "index.html";
 	}
 		}
 });
@@ -126,11 +129,13 @@ function shelonans(){//onclick GUESS BUTTON
 	    var correct = snapshot.child('correct').val();
 				hint1.innerText = "רמז מספר 1:" + " " + snapshot.child('hints/hint1').val();
 				hint2.innerText = "רמז מספר 2:" + " " + snapshot.child('hints/hint2').val();
+				correctdesc.innerText =  "הסבר לתשובה הנכונה:" + " " +  snapshot.child('correctdesc').val();
 				if (!getchecked){
 					alert("חייב לבחור");
 				}
 				else if(getchecked == correct){
 					alert("נכון מאוד");
+					$('#correctdesc').show();
 					$('#next').show();
 					$('#guess').hide();
 				}
@@ -145,7 +150,8 @@ function shelonans(){//onclick GUESS BUTTON
 						 alert("טעית");
 					}
 					if (hintcounter == 3){
-						alert("טעית פעם נוספת, התשובה הנכונה תסומן");
+						alert("טעית פעם נוספת, התשובה הנכונה תסומן וההסבר לתשובה יופיע");
+						$('#correctdesc').show();
 						checkRadio(correct);
 						$('#guess').hide();
 						$('#next').show();

@@ -1,6 +1,7 @@
 // JavaScript Documentdadsa
 var uploader = document.getElementById('uploader');
 var fileButton = document.getElementById('fileButton');
+const file = document.querySelector('#fileButton');
 window.picture;
 fileButton.addEventListener('change',function(e){
 	var e2 = document.getElementById("formchoice");
@@ -42,7 +43,11 @@ var formaction = e.options[e.selectedIndex].value;
 	firebaseRef.child("desc").set(desc);
 	firebaseRef.child("picture").set(picture);
 
-//Update the form action
-document.form1.action = formaction;
+	alert("עלה בהצלחה");
+	document.getElementById("mytitle").value = " "
+	 document.getElementById("writequest").value = " "
+	 file.value = '';
+	uploader.value = " "
+		
 
 }

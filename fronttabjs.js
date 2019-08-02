@@ -16,7 +16,7 @@ window.onload = function() {
 }
 
 function goFront(){
-	window.top.location.href = "front";
+	window.top.location.href = "front.html";
 }
 
 

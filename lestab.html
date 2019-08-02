@@ -11,7 +11,7 @@
 <h2 id="adminheader2" > :בחר שיעור שברצונך לערוך</h2>
 	<div dir="rtl">
 	<div id="mainselection">
-<form name ="form1" onSubmit="actionOnSubmit()" action="ok.php" method ="post" target="_blank">
+
 <select id="formchoice" name="formchoice">
 
   <option value="les1">שיעור 1</option>
@@ -56,10 +56,9 @@
 		<input type="file" value="upload" id="fileButton"/>
 		<br>
 		<div dir="rtl">
-		<input type="submit" value="שלח" class="button2">
+		 <button class="button" id="sendtabbutton" onClick="actionOnSubmit()" >שלח</button>
 		</div>
 		</div>
-</form>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>

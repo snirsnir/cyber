@@ -34,18 +34,25 @@ $overlay.click(function() {
     $iframe.attr('src', '');
 });
 function goTab(element){
+	var naul1 = element.innerHTML;
+	var naul2 = "השיעור נעול"
+	if (naul1 == naul2){
+		
+	}
+	else {
 	screen = num(element.id);
 	localStorage.setItem("screen",screen);
     event.preventDefault();
     var id = $(this).attr('href');
-    var src = 'fronttab'
+    var src = 'fronttab.html'
     // update overlay with iframe
     $iframe.attr('src', src);
     // show overlay
     $overlay.show();
+	}
 }
 function num(num1){ //extract num from the string
-	var numb = num1.match(/\d/g);
+var numb = num1.match(/\d/g);
 numb = numb.join("");
 return numb
 }
@@ -69,11 +76,11 @@ query.once("value")
       var key = childSnapshot.key;
 		  if (snapshot.child(key).child("active").val() == "1") { 
 	  document.getElementById("lesbut"+num(key)).style.background='green';
+	document.getElementById("lesbut"+num(key)).innerText = 'היכנס לשיעור';
   }
 		else {
 			 document.getElementById("lesbut"+num(key)).style.background='gray';
 			document.getElementById("lesbut"+num(key)).onclick = " ";
-			document.getElementById("lesbut"+num(key)).innerText = 'השיעור נעול';
 		}
   });
 		var fireScreen = firebase.database().ref().child('lessons/tabs');
