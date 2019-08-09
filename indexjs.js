@@ -113,9 +113,10 @@ function login(){
 
 }
 firebase.auth().onAuthStateChanged(function(user) {
+	
   if (user) {
     // User is signed in.
-
+console.log(user)
     document.getElementById("loggedin").style.display = "block";
     document.getElementById("login_div").style.display = "none";
 
