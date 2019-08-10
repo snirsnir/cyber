@@ -2,6 +2,7 @@
 	    var btn = document.getElementById("lessons");
 		var span = document.getElementsByClassName("close")[0];
 		var les1 = document.getElementById("les1");
+        var whatflag = document.getElementById("flags");
         var screen;
 		btn.onclick = function() {
   		modal.style.display = "block";
@@ -116,10 +117,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 	
   if (user) {
     // User is signed in.
-console.log(user)
+    console.log(user)
     document.getElementById("loggedin").style.display = "block";
     document.getElementById("login_div").style.display = "none";
-
+    flags.src = "images/flags/"+user.displayName+".png";
     var user = firebase.auth().currentUser;
 
     if(user != null){

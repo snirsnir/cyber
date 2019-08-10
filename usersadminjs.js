@@ -7,13 +7,23 @@ signup.addEventListener('click', e => {
 const email =  txtEmail.value;
 const user =  txtUser.value;
 const pass = txtPassword.value;
+const student = txtStudent.value;
+const course = txtCourse.value;
 	const auth = firebase.auth();
 const promise = auth.createUserWithEmailAndPassword(email, pass);
   promise.catch(e => console.log(e.message));
   auth.onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
-   firebaseUser.updateProfile({ displayName: user }).then(function() { txtUser.innerHTML = firebase.auth().currentUser.displayName; });
-      console.log("display name: " + firebaseUser.displayName);
+   firebaseUser.updateProfile({ displayName: user })
+	var firebaseRef = firebase.database().ref('users/course'+course+'/' + firebaseUser.uid)
+   firebaseRef.set({
+        email: firebaseUser.email,
+        uid : firebaseUser.uid,
+	    username : user,
+	    points : '0',
+	    studentName : student, 
+   });
+   auth.signOut();
     } else { }
   });
 
