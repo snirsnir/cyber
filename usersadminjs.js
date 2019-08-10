@@ -14,7 +14,7 @@ const promise = auth.createUserWithEmailAndPassword(email, pass);
   promise.catch(e => console.log(e.message));
   auth.onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
-   firebaseUser.updateProfile({ displayName: user })
+   firebaseUser.updateProfile({ displayName: user,photoURL: course }) //photourl IS COURSENUM
 	var firebaseRef = firebase.database().ref('users/course'+course+'/' + firebaseUser.uid)
    firebaseRef.set({
         email: firebaseUser.email,

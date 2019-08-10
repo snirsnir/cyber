@@ -26,6 +26,10 @@ body header h5 {
 	margin-left: 54.5%;
 	margin-top: -136px;
 }
+body header h6 {
+	margin-left: 23.5%;
+	margin-top: -106px;
+}
 
 #mainButtons {
 	display: flex;
@@ -759,7 +763,26 @@ input, button {
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
 }
+.coins {
+    position: relative;
+    width: 13%;
+    height: 5vh;
+	left: 85%;
+    background-image: url("images/coins.png");
+    background-size: cover;
+    background-position: 50% 50%;
+}
 
-
+.coins h3 {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+    transform: translate(-50%,-50%);
+    font-family: sans-serif;
+    color: white;
+    font-size: 26px;
+}
 
 	

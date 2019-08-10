@@ -3,6 +3,7 @@
 		var span = document.getElementsByClassName("close")[0];
 		var les1 = document.getElementById("les1");
         var whatflag = document.getElementById("flags");
+        var points = document.getElementById("points");
         var screen;
 		btn.onclick = function() {
   		modal.style.display = "block";
@@ -121,6 +122,12 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("loggedin").style.display = "block";
     document.getElementById("login_div").style.display = "none";
     flags.src = "images/flags/"+user.displayName+".png";
+	fireScreen = firebase.database().ref().child('users/course'+user.photoURL+'/').child(user.uid);
+	fireScreen.on('value', function(snapshot) {
+	     fireScreen.on('value',function(datasnapshot){
+		points.innerText = snapshot.child('points').val();
+	})
+})
     var user = firebase.auth().currentUser;
 
     if(user != null){
